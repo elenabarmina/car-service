@@ -11,6 +11,7 @@ import javax.persistence.FetchType;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.validation.constraints.NotNull;
+import javax.persistence.UniqueConstraint;
 
 @NamePattern("%s|name")
 @Table(name = "CARSERVICE_CITY")
@@ -19,7 +20,7 @@ public class City extends StandardEntity {
     private static final long serialVersionUID = 976111835622871552L;
 
     @NotNull
-    @Column(name = "NAME", nullable = false, length = 100)
+    @Column(name = "NAME", nullable = false, unique = true, length = 100)
     protected String name;
 
     @Column(name = "PHONE_CODE", nullable = false, length = 5)

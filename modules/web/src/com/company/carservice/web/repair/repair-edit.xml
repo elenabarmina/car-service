@@ -8,7 +8,14 @@
     <dsContext>
         <datasource id="repairDs"
                     class="com.company.carservice.entity.Repair"
-                    view="_local"/>
+                    view="repair-view"/>
+        <collectionDatasource id="employeesDs"
+                              class="com.company.carservice.entity.Employee"
+                              view="_minimal">
+            <query>
+                <![CDATA[select e from carservice$Employee e]]>
+            </query>
+        </collectionDatasource>
     </dsContext>
     <dialogMode height="600"
                 width="800"/>
@@ -19,6 +26,9 @@
             <column width="250px">
                 <field property="description"
                        rows="5"/>
+                <field property="center"/>
+                <field optionsDatasource="employeesDs"
+                       property="employee"/>
             </column>
         </fieldGroup>
         <frame id="windowActions"

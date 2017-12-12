@@ -5,5 +5,7 @@
         <item screen="carservice$City.browse"/>
         <item screen="carservice$Company.browse"/>
         <item screen="carservice$Individual.browse"/>
+        <item screen="carservice$CarServiceCenter.browse"/>
+        <item screen="carservice$Customer.browse"/>
     </menu>
 </menu-config>
