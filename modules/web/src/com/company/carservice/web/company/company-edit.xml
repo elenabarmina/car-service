@@ -8,10 +8,7 @@
     <dsContext>
         <datasource id="companyDs"
                     class="com.company.carservice.entity.Company"
-                    view="company-view">
-            <collectionDatasource id="centerDs"
-                                  property="center"/>
-        </datasource>
+                    view="_local"/>
     </dsContext>
     <dialogMode height="600"
                 width="800"/>
@@ -26,25 +23,6 @@
                 <field property="inn"/>
             </column>
         </fieldGroup>
-        <groupBox id="centerBox"
-                  caption="msg://com.company.carservice.entity/Company.center">
-            <table id="centerTable"
-                   height="200px"
-                   width="100%">
-                <actions>
-                    <action id="add"/>
-                    <action id="remove"/>
-                </actions>
-                <columns>
-                    <column id="name"/>
-                </columns>
-                <rows datasource="centerDs"/>
-                <buttonsPanel>
-                    <button action="centerTable.add"/>
-                    <button action="centerTable.remove"/>
-                </buttonsPanel>
-            </table>
-        </groupBox>
         <frame id="windowActions"
                screen="editWindowActions"/>
     </layout>

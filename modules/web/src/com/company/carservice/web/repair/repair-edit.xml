@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <window xmlns="http://schemas.haulmont.com/cuba/window.xsd"
         caption="msg://editorCaption"
-        class="com.company.carservice.web.individual.IndividualEdit"
-        datasource="individualDs"
+        class="com.company.carservice.web.repair.RepairEdit"
+        datasource="repairDs"
         focusComponent="fieldGroup"
-        messagesPack="com.company.carservice.web.individual">
+        messagesPack="com.company.carservice.web.repair">
     <dsContext>
-        <datasource id="individualDs"
-                    class="com.company.carservice.entity.Individual"
+        <datasource id="repairDs"
+                    class="com.company.carservice.entity.Repair"
                     view="_local"/>
     </dsContext>
     <dialogMode height="600"
@@ -15,12 +15,10 @@
     <layout expand="windowActions"
             spacing="true">
         <fieldGroup id="fieldGroup"
-                    datasource="individualDs">
+                    datasource="repairDs">
             <column width="250px">
-                <field property="name"/>
-                <field property="email"/>
-                <field property="phone"/>
-                <field property="passportNo"/>
+                <field property="description"
+                       rows="5"/>
             </column>
         </fieldGroup>
         <frame id="windowActions"
