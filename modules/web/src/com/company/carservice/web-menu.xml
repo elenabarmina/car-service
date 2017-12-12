@@ -3,5 +3,7 @@
     <menu id="application-carservice"
           insertBefore="administration">
         <item screen="carservice$City.browse"/>
+        <item screen="carservice$Company.browse"/>
+        <item screen="carservice$Individual.browse"/>
     </menu>
 </menu-config>

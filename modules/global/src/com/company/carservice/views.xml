@@ -6,4 +6,32 @@
         <property name="center"
                   view="_minimal"/>
     </view>
+    <view class="com.company.carservice.entity.CarServiceCenter"
+          extends="_local"
+          name="carServiceCenter-view">
+        <property name="customer"
+                  view="_minimal"/>
+        <property name="employesList"
+                  view="_minimal"/>
+        <property name="city"
+                  view="_minimal"/>
+        <property name="repair"
+                  view="_minimal">
+            <property name="description"/>
+            <property name="employee"
+                      view="_minimal"/>
+        </property>
+    </view>
+    <view class="com.company.carservice.entity.Individual"
+          extends="_local"
+          name="individual-view">
+        <property name="center"
+                  view="_minimal"/>
+    </view>
+    <view class="com.company.carservice.entity.Company"
+          extends="_local"
+          name="company-view">
+        <property name="center"
+                  view="_minimal"/>
+    </view>
 </views>
