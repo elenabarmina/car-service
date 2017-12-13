@@ -7,6 +7,7 @@ import com.company.carservice.entity.City;
 import com.haulmont.cuba.core.listener.BeforeUpdateEntityListener;
 
 import javax.inject.Inject;
+import javax.swing.*;
 
 @Component("carservice_CitySetDefaultListener")
 public class CitySetDefaultListener implements BeforeInsertEntityListener<City>, BeforeUpdateEntityListener<City> {
@@ -26,9 +27,9 @@ public class CitySetDefaultListener implements BeforeInsertEntityListener<City>,
     }
 
     private void checkCity(City city){
-        if (city.getIsDefault()){
-            cityService.resetDefaultCity();
-        }
+//        if (city.getIsDefault()){
+//            cityService.resetDefaultCity();
+//        }
     }
 
 

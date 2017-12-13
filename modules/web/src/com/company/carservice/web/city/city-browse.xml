@@ -16,7 +16,7 @@
                     view="_local"/>
         <groupDatasource id="citiesDs"
                          class="com.company.carservice.entity.City"
-                         view="_minimal">
+                         view="_local">
             <query>
                 <![CDATA[select e from carservice$City e]]>
             </query>
@@ -60,7 +60,9 @@
                         <action id="remove"/>
                     </actions>
                     <columns>
+                        <column id="isDefault"/>
                         <column id="name"/>
+                        <column id="phone_code"/>
                     </columns>
                     <rows datasource="citiesDs"/>
                     <rowsCount/>
