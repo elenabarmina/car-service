@@ -12,7 +12,9 @@ import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.validation.constraints.NotNull;
 import javax.persistence.UniqueConstraint;
+import com.haulmont.cuba.core.entity.annotation.Listeners;
 
+@Listeners("carservice_CitySetDefaultListener")
 @NamePattern("%s|name")
 @Table(name = "CARSERVICE_CITY")
 @Entity(name = "carservice$City")
