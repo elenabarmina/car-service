@@ -86,6 +86,7 @@
                         <column width="250px">
                             <field property="name"/>
                             <field property="phone_code"/>
+                            <field property="isDefault"/>
                         </column>
                     </fieldGroup>
                 </vbox>

@@ -6,5 +6,6 @@ import com.company.carservice.entity.City;
 public interface CityService {
     String NAME = "carservice_CityService";
 
-    public City getDefaultCity();
+    City getDefaultCity();
+    void resetDefaultCity();
 }

@@ -27,4 +27,17 @@ public class CityServiceBean implements CityService {
         }
         return list.size() > 0 ? list.get(0) : null;
     }
+
+    @Override
+    public void resetDefaultCity() {
+
+        try (Transaction tx = persistence.createTransaction()) {
+            EntityManager em = persistence.getEntityManager();
+            Query query = em.createNativeQuery(
+                    "update carservice_city set is_default = false where is_default = true");
+            query.executeUpdate();
+            tx.commit();
+        }
+    }
+
 }
