@@ -23,8 +23,20 @@ public class City extends StandardEntity {
     @Column(name = "NAME", nullable = false, unique = true, length = 100)
     protected String name;
 
+    @Column(name = "IS_DEFAULT", nullable = false)
+    protected Boolean isDefault = false;
+
     @Column(name = "PHONE_CODE", nullable = false, length = 5)
     protected String phone_code;
+
+
+    public void setIsDefault(Boolean isDefault) {
+        this.isDefault = isDefault;
+    }
+
+    public Boolean getIsDefault() {
+        return isDefault;
+    }
 
 
     public void setName(String name) {
