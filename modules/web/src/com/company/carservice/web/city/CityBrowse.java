@@ -1,14 +1,30 @@
 package com.company.carservice.web.city;
 
-import com.haulmont.cuba.core.global.DataManager;
-import com.haulmont.cuba.gui.components.EntityCombinedScreen;
+import com.haulmont.cuba.gui.components.AbstractLookup;
+import com.haulmont.cuba.gui.components.GroupTable;
+import com.haulmont.cuba.gui.components.Window;
+import com.haulmont.cuba.gui.components.actions.EditAction;
+import com.haulmont.cuba.gui.data.GroupDatasource;
 
 import javax.inject.Inject;
-import com.haulmont.cuba.gui.components.Component;
+import java.util.Map;
 
-public class CityBrowse extends EntityCombinedScreen {
+public class CityBrowse extends AbstractLookup {
 
     @Inject
-    private DataManager dataManager;
+    GroupDatasource citiesDs;
 
+    @Inject
+    GroupTable citiesTable;
+
+    @Override
+    public void init(Map<String, Object> params) {
+
+        citiesTable.addAction(new EditAction(citiesTable) {
+            @Override
+            protected void afterWindowClosed(Window window) {
+                citiesDs.refresh();
+            }
+        });
+    }
 }
