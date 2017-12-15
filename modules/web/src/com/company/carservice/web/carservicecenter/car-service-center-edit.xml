@@ -23,6 +23,15 @@
                 <![CDATA[select e from carservice$City e]]>
             </query>
         </collectionDatasource>
+        <valueCollectionDatasource id="customersCountDs">
+            <query>
+                <![CDATA[select count(c.id) from carservice$Customer c]]>
+            </query>
+            <properties>
+                <property datatype="decimal"
+                          name="count"/>
+            </properties>
+        </valueCollectionDatasource>
     </dsContext>
     <dialogMode height="600"
                 width="800"/>
@@ -39,7 +48,8 @@
             </column>
         </fieldGroup>
         <groupBox id="customerBox"
-                  caption="msg://com.company.carservice.entity/CarServiceCenter.customer">
+                  caption="msg://com.company.carservice.entity/CarServiceCenter.customer"
+                  collapsable ="true">
             <table id="customerTable"
                    height="200px"
                    width="100%">
@@ -58,7 +68,8 @@
             </table>
         </groupBox>
         <groupBox id="employesListBox"
-                  caption="msg://com.company.carservice.entity/CarServiceCenter.employesList">
+                  caption="msg://com.company.carservice.entity/CarServiceCenter.employesList"
+                  collapsable ="true">
             <table id="employesListTable"
                    height="200px"
                    width="100%">
@@ -80,7 +91,8 @@
             </table>
         </groupBox>
         <groupBox id="repairBox"
-                  caption="msg://com.company.carservice.entity/CarServiceCenter.repair">
+                  caption="msg://com.company.carservice.entity/CarServiceCenter.repair"
+                  collapsable="true">
             <table id="repairTable"
                    height="200px"
                    width="100%">

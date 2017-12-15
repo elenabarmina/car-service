@@ -36,13 +36,6 @@
             </columns>
             <rows datasource="customersDs"/>
             <rowsCount/>
-            <buttonsPanel id="buttonsPanel"
-                          alwaysVisible="true">
-                <button id="createBtn"
-                        action="customersTable.create"/>
-                <button id="removeBtn"
-                        action="customersTable.remove"/>
-            </buttonsPanel>
         </groupTable>
     </layout>
 </window>
