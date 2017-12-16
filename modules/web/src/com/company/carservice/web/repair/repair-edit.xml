@@ -13,7 +13,14 @@
                               class="com.company.carservice.entity.Employee"
                               view="_minimal">
             <query>
-                <![CDATA[select e from carservice$Employee e]]>
+                <![CDATA[select e from carservice$Employee e where e.center.id = :ds$centersDs]]>
+            </query>
+        </collectionDatasource>
+        <collectionDatasource id="centersDs"
+                              class="com.company.carservice.entity.CarServiceCenter"
+                              view="_minimal">
+            <query>
+                <![CDATA[select e from carservice$CarServiceCenter e]]>
             </query>
         </collectionDatasource>
     </dsContext>
@@ -24,10 +31,14 @@
         <fieldGroup id="fieldGroup"
                     datasource="repairDs">
             <column width="250px">
-                <field property="description"
+                <field id="descField"
+                       property="description"
                        rows="5"/>
-                <field property="center"/>
-                <field optionsDatasource="employeesDs"
+                <field id="carCenterField"
+                       optionsDatasource="centersDs"
+                       property="center"/>
+                <field id="employeeField"
+                       optionsDatasource="employeesDs"
                        property="employee"/>
             </column>
         </fieldGroup>
