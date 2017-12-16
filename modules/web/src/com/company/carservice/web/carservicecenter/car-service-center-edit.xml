@@ -59,6 +59,7 @@
                 </actions>
                 <columns>
                     <column id="name"/>
+                    <column id="type"/>
                 </columns>
                 <rows datasource="customerDs"/>
                 <buttonsPanel>
