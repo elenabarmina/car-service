@@ -8,4 +8,16 @@
     <!-- Annotation-based beans -->
     <context:component-scan base-package="com.company.carservice"/>
 
+    <bean id="sales_MBeanExporter" lazy-init="false"
+          class="com.haulmont.cuba.core.sys.jmx.MBeanExporter">
+        <property name="beans">
+            <map>
+                <entry key="${cuba.webContextName}.carservice:type=Employee"
+                       value-ref="carservice_EmployeeMBean"/>
+            </map>
+        </property>
+    </bean>
+
+
+
 </beans>
