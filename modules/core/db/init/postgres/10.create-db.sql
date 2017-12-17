@@ -10,6 +10,7 @@ create table CARSERVICE_CAR_SERVICE_CENTER (
     DELETED_BY varchar(50),
     --
     NAME varchar(100) not null,
+    CREATOR_ID uuid,
     CITY_ID uuid,
     PHONE varchar(15) not null,
     ADDRESS varchar(255) not null,

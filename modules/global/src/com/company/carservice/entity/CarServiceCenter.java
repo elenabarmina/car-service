@@ -18,6 +18,7 @@ import java.util.List;
 import javax.persistence.OneToMany;
 import javax.persistence.JoinTable;
 import javax.persistence.ManyToMany;
+import com.haulmont.cuba.security.entity.User;
 
 @NamePattern("%s|name")
 @Table(name = "CARSERVICE_CAR_SERVICE_CENTER")
@@ -27,6 +28,10 @@ public class CarServiceCenter extends StandardEntity {
 
     @Column(name = "NAME", nullable = false, length = 100)
     protected String name;
+
+    @ManyToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name = "CREATOR_ID")
+    protected User creator;
 
     @JoinTable(name = "CARSERVICE_CAR_SERVICE_CENTER_CUSTOMER_LINK",
         joinColumns = @JoinColumn(name = "CAR_SERVICE_CENTER_ID"),
@@ -53,6 +58,15 @@ public class CarServiceCenter extends StandardEntity {
     @Composition
     @OneToMany(mappedBy = "center")
     protected List<Repair> repair;
+
+    public void setCreator(User creator) {
+        this.creator = creator;
+    }
+
+    public User getCreator() {
+        return creator;
+    }
+
 
     public void setRepair(List<Repair> repair) {
         this.repair = repair;
